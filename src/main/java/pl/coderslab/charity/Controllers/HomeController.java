@@ -1,4 +1,4 @@
-package pl.coderslab.charity;
+package pl.coderslab.charity.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

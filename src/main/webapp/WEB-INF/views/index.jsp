@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<header class="header--main-page">
 <%@include file="/WEB-INF/assets/header.jsp"%>
+<%@include file="/WEB-INF/assets/notLoggedMenu.jsp"%>
 
     <div class="slogan container container--90">
         <div class="slogan--item">
@@ -15,7 +17,7 @@
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
-            <em id="numberOfDonatedBags"></em>
+            <em id="numberOfDonatedBags"><%-- landingPage.js --%></em>
 
             <h3>Oddanych worków</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
@@ -23,7 +25,7 @@
         </div>
 
         <div class="stats--item">
-            <em id="numberOfSupportedOrganisations"></em>
+            <em id="numberOfSupportedOrganisations"><%-- landingPage.js --%></em>
             <h3>Wspartych organizacji</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
                 quam.</p>
@@ -81,29 +83,7 @@
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items">
-<%--            <li>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja "Dbam o Zdrowie"</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc dzieciom z ubogich rodzin.</div>--%>
-<%--                </div>--%>
-
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja "A kogo"</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.</div>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-
-<%--            <li>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja “Dla dzieci"</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>--%>
-<%--                </div>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja “Bez domu”</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>--%>
-<%--                </div>--%>
-
-<%--            </li>--%>
+            <%-- landingPage.js --%>
         </ul>
     </div>
 

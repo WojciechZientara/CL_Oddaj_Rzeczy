@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
    * Hide elements when clicked on document
    */
   document.addEventListener("click", function(e) {
+
     const target = e.target;
     const tagName = target.tagName;
 

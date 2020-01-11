@@ -12,4 +12,7 @@ public interface DonationRepository extends JpaRepository<Donation, Long> {
     @Query("SELECT COUNT(DISTINCT d.institution) FROM Donation d")
     Long getNumberOfSupportedOrganisations();
 
+    @Query("SELECT d FROM Donation d WHERE d.id = ?1")
+    Donation findDonationById(Long id);
+
 }

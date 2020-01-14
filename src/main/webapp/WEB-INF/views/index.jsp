@@ -2,7 +2,7 @@
 
 <header class="header--main-page">
 <%@include file="/WEB-INF/assets/header.jsp"%>
-<%@include file="/WEB-INF/assets/notLoggedMenu.jsp"%>
+<%@include file="/WEB-INF/assets/menu.jsp"%>
 
     <div class="slogan container container--90">
         <div class="slogan--item">
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large">Załóż konto</a>
+    <a href="<c:url value="/registerUser"/>" class="btn btn--large">Załóż konto</a>
 </section>
 
 <section class="about-us">
@@ -90,5 +90,6 @@
 </section>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="<c:url value="resources/js/checkLogin.js"/>"></script>
 <script src="<c:url value="resources/js/landingPage.js"/>"></script>
 <%@include file="/WEB-INF/assets/footer.jsp"%>

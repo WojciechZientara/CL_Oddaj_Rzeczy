@@ -3,44 +3,51 @@
 <%@include file="/WEB-INF/assets/header.jsp"%>
 
 <header class="header--form-page">
-    <%@include file="/WEB-INF/assets/loggedMenu.jsp"%>
+    <%@include file="/WEB-INF/assets/menu.jsp"%>
 
-    <div class="slogan container container--90 formProcess">
-        <div class="slogan--item">
-            <h1>
-                Oddaj rzeczy, których już nie chcesz<br />
-                <span class="uppercase">potrzebującym</span>
-            </h1>
+    <div class="accessDenied">
+        <section class="login-page">
+            <h2>Brak dostępu.</h2>
+        </section>
+    </div>
 
-            <div class="slogan--steps">
-                <div class="slogan--steps-title">Wystarczą 4 proste kroki:</div>
-                <ul class="slogan--steps-boxes">
-                    <li>
-                        <div><em>1</em><span>Wybierz rzeczy</span></div>
-                    </li>
-                    <li>
-                        <div><em>2</em><span>Spakuj je w worki</span></div>
-                    </li>
-                    <li>
-                        <div><em>3</em><span>Wybierz fundację</span></div>
-                    </li>
-                    <li>
-                        <div><em>4</em><span>Zamów kuriera</span></div>
-                    </li>
-                </ul>
+    <div class="accessGranted">
+        <div class="slogan container container--90 formProcess">
+            <div class="slogan--item">
+                <h1>
+                    Oddaj rzeczy, których już nie chcesz<br />
+                    <span class="uppercase">potrzebującym</span>
+                </h1>
+
+                <div class="slogan--steps">
+                    <div class="slogan--steps-title">Wystarczą 4 proste kroki:</div>
+                    <ul class="slogan--steps-boxes">
+                        <li>
+                            <div><em>1</em><span>Wybierz rzeczy</span></div>
+                        </li>
+                        <li>
+                            <div><em>2</em><span>Spakuj je w worki</span></div>
+                        </li>
+                        <li>
+                            <div><em>3</em><span>Wybierz fundację</span></div>
+                        </li>
+                        <li>
+                            <div><em>4</em><span>Zamów kuriera</span></div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="formSubmitConfirmation" class="slogan container container--90">
-        <h2>
-            Dziękujemy za przesłanie formularza. <br>
-            Na maila prześlemy wszelkie informacje o odbiorze.
-        </h2>
-    </div>
+        <div id="formSubmitConfirmation" class="slogan container container--90">
+            <h2>
+                Dziękujemy za przesłanie formularza. <br>
+                Na maila prześlemy wszelkie informacje o odbiorze.
+            </h2>
+        </div>
 </header>
 
-<section class="form--steps formProcess">
+<section class="form--steps formProcess accessGranted">
     <div class="form--steps-instructions">
         <div class="form--steps-container">
             <h3>Ważne!</h3>
@@ -251,6 +258,10 @@
     </div>
 </section>
 
+</div>
+
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="<c:url value="resources/js/checkLogin.js"/>"></script>
 <script src="<c:url value="resources/js/form.js"/>"></script>
 <%@include file="/WEB-INF/assets/footer.jsp"%>

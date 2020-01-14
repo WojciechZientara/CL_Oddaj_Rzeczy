@@ -1,21 +1,33 @@
 package pl.coderslab.charity.Controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 @Controller
 public class ViewsDisplayController {
 
-
     @RequestMapping("/")
-    public String homeAction(Model model){
+    public String homeAction(){
         return "index";
     }
 
     @RequestMapping("/donate")
-    public String donate (Model model){
+    public String donate (){
         return "form";
+    }
+
+    @RequestMapping("/registerUser")
+    public String register (){
+        return "register";
+    }
+
+    @RequestMapping("/login")
+    public String login (){
+        return "login";
+    }
+
+    @RequestMapping("/admin")
+    public String admin (){
+        return "admin";
     }
 }

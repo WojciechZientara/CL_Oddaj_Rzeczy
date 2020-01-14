@@ -1842,3 +1842,11 @@ footer .bottom-line--icons a img {
   display: none;
   padding-top: 150px;
 }
+
+#logged, #registerConfirmation {
+  display: none;
+}
+
+.accessDenied {
+  display: none;
+}

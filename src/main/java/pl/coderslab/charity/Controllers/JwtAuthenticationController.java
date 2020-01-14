@@ -9,6 +9,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.charity.Dto.UserDto;
+import pl.coderslab.charity.Entities.User;
+import pl.coderslab.charity.Repositories.UserRepository;
 import pl.coderslab.charity.Services.JwtUserDetailsService;
 import pl.coderslab.charity.SecurityModel.JwtTokenUtil;
 import pl.coderslab.charity.SecurityModel.JwtRequest;
@@ -27,6 +29,9 @@ public class JwtAuthenticationController {
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
         authenticate(authenticationRequest.getEmail(), authenticationRequest.getPassword());
@@ -34,11 +39,6 @@ public class JwtAuthenticationController {
                 .loadUserByUsername(authenticationRequest.getEmail());
         final String token = jwtTokenUtil.generateToken(userDetails);
         return ResponseEntity.ok(new JwtResponse(token));
-    }
-
-    @GetMapping("/admin")
-    public String testAdmin() {
-        return "Sukces";
     }
 
     @PostMapping("/register")
@@ -55,4 +55,14 @@ public class JwtAuthenticationController {
             throw new Exception("INVALID_CREDENTIALS", e);
         }
     }
+
+    @PostMapping("/getUserDetails")
+    public UserDto getUserDetails(@RequestBody UserDto userDto) {
+        User user = userRepository.findByEmail(userDto.getEmail());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        userDto.setRoles(user.getRoles());
+        return userDto;
+    }
+
 }

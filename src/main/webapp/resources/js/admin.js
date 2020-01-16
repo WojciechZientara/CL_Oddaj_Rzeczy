@@ -3,8 +3,6 @@ $(function () {
 });
 
 function checkAccessAndPerformAction(functionName, object) {
-    // console.log(functionName)
-    // console.log(object)
     var token = localStorage.getItem('charityToken');
     if (token === null) {
         accessDenied()

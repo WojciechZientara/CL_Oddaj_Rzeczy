@@ -11,6 +11,7 @@ import pl.coderslab.charity.JsonDeserializers.DonationDtoDeserializer;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class Donation {
     )
     private List<Category> categories;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Institution institution;
 
     @NotBlank
@@ -57,5 +58,17 @@ public class Donation {
 
     @Column(columnDefinition = "TEXT")
     private String pickUpComment;
+
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    private User user;
+
+    private String status;
+
+    private LocalDateTime created;
+
+    @PrePersist
+    public void prePersist() {
+        created = LocalDateTime.now();
+    }
 
 }

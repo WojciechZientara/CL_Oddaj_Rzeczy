@@ -11,6 +11,7 @@ import pl.coderslab.charity.Dto.DonationDto;
 import pl.coderslab.charity.Entities.Donation;
 import pl.coderslab.charity.Repositories.CategoryRepository;
 import pl.coderslab.charity.Repositories.InstitutionRepository;
+import pl.coderslab.charity.Repositories.UserRepository;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -27,6 +28,9 @@ public class DonationDeserializer extends JsonDeserializer<Donation> {
 
     @Autowired
     InstitutionRepository institutionRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public Donation deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
@@ -54,6 +58,8 @@ public class DonationDeserializer extends JsonDeserializer<Donation> {
             if (donation.getPickUpComment().equals("") || donation.getPickUpComment() == null) {
                 donation.setPickUpComment("Brak");
             }
+            Long userId = node.get("user").get("id").asLong();
+            donation.setUser(userRepository.findUserById(userId));
 
         return donation;
 

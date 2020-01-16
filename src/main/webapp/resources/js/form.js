@@ -40,7 +40,7 @@ function getUserDetailsAndAdjust(userEmail, token) {
         },
         success: function (result) {
             getData()
-            activateFormDataCollection()
+            activateFormDataCollection(userEmail)
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             accessDenied()
@@ -95,7 +95,7 @@ function displayInstitutions(dto) {
     }
 }
 
-function activateFormDataCollection() {
+function activateFormDataCollection(userEmail) {
     var lastNext = $('#lastNext')
     $(lastNext).click(function () {
         var categoriesCheckboxes = $('input[name="categories"]:checked');
@@ -127,11 +127,11 @@ function activateFormDataCollection() {
             pickUpComment : pickUpComment
         };
 
-        sendDataToServer(donation);
+        sendDataToServer(donation, userEmail);
     })
 }
 
-function sendDataToServer(donation) {
+function sendDataToServer(donation, userEmail) {
     $.ajax({
         url: "http://localhost:8080/verifyFormData",
         data: JSON.stringify({
@@ -144,7 +144,8 @@ function sendDataToServer(donation) {
             phone : donation.phone,
             pickUpDate : donation.pickUpDate,
             pickUpTime : donation.pickUpTime,
-            pickUpComment : donation.pickUpComment
+            pickUpComment : donation.pickUpComment,
+            userEmail: userEmail
         }),
         method: "POST",
         contentType: "application/json"
@@ -154,7 +155,6 @@ function sendDataToServer(donation) {
 }
 
 function checkErrors(dto) {
-
     //SUMMARY
 
     //quantity
@@ -345,11 +345,13 @@ function checkErrors(dto) {
                     phone : donation.phone,
                     pickUpDate : donation.pickUpDate,
                     pickUpTime : donation.pickUpTime,
-                    pickUpComment : donation.pickUpComment
+                    pickUpComment : donation.pickUpComment,
+                    user : donation.user
                 }),
                 method: "POST",
                 contentType: "application/json"
             }).done(function(result) {
+                console.log(result)
                 displayConfirmation(result)
             });
         })

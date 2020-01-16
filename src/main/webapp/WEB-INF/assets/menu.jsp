@@ -10,9 +10,9 @@
         <li class="logged-user">
             <span id="userFullName"></span>
             <ul class="dropdown">
-                <li><a href="#">Profil</a></li>
+                <li><a href="<c:url value="/profile"/>">Profil</a></li>
                 <li><a href="#">Ustawienia</a></li>
-                <li><a href="#">Moje zbiórki</a></li>
+                <li><a href="<c:url value="/myDonations"/>">Moje zbiórki</a></li>
                 <li><a id="logout" href="#">Wyloguj</a></li>
             </ul>
         </li>

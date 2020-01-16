@@ -30,4 +30,14 @@ public class ViewsDisplayController {
     public String admin (){
         return "admin";
     }
+
+    @RequestMapping("/profile")
+    public String profile(){
+        return "profile";
+    }
+
+    @RequestMapping("/myDonations")
+    public String myDonations (){
+        return "myDonations";
+    }
 }

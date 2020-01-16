@@ -49,11 +49,18 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     public User save(UserDto userDto) {
         User user = new User();
+        if (userDto.getId() != null && userDto.getId() > 0) {
+            user.setId(userDto.getId());
+        }
         user.setEmail(userDto.getEmail());
         user.setFirstName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());
         Set<Role> roles = new HashSet<>();
-        roles.add(roleRepository.findByName("ROLE_USER"));
+        if (userDto.getRoles() != null) {
+            roles = userDto.getRoles();
+        } else {
+            roles.add(roleRepository.findByName("ROLE_USER"));
+        }
         user.setRoles(roles);
         user.setPassword(bcryptEncoder.encode(userDto.getPassword()));
         return userRepository.save(user);

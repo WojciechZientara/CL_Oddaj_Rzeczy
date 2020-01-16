@@ -42,4 +42,9 @@ function displayLoggedMenu(dto) {
     $('#notLogged').hide();
     $('#userFullName').text("Witaj " + dto.firstName);
     $('#logged').show();
+    $('#logout').on("click", function (event) {
+        event.preventDefault()
+        localStorage.removeItem('charityToken')
+        window.location.href = '/';
+    })
 }

@@ -13,8 +13,7 @@ function checkAccess() {
 }
 
 function accessDenied() {
-    $('.accessGranted').remove()
-    $('.accessDenied').show()
+    window.location.href = '/login';
 }
 
 function parseJwt (token) {

@@ -13,7 +13,7 @@
                 <li><a href="#">Profil</a></li>
                 <li><a href="#">Ustawienia</a></li>
                 <li><a href="#">Moje zbiórki</a></li>
-                <li><a href="#">Wyloguj</a></li>
+                <li><a id="logout" href="#">Wyloguj</a></li>
             </ul>
         </li>
     </ul>

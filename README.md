@@ -22,6 +22,7 @@ The application consists of two separate layers: the <b>JSP frontend</b> and the
 * Spring Web
 * Spring Data JPA
 * Spring Security
+* Hibernate
 * JSON Web Token
 * MySQL DB
 * Jackson

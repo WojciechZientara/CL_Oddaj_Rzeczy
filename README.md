@@ -12,6 +12,10 @@ The application is meant to provide an easy solution for people who instead of t
 The application consists of two separate layers: the <b>JSP frontend</b> and the <b>REST API</b> backend and has been prepared as the Coders Lab's 'Java Developer: Web' course graduation project.
 <br><br>
 ## Screenshots
+![OddajRzeczy01.png](https://github.com/WojciechZientara/Oddaj_Rzeczy/blob/master/OddajRzeczy01.png)
+![OddajRzeczy02.png](https://github.com/WojciechZientara/Oddaj_Rzeczy/blob/master/OddajRzeczy02.png)
+![OddajRzeczy03.png](https://github.com/WojciechZientara/Oddaj_Rzeczy/blob/master/OddajRzeczy03.png)
+![OddajRzeczy04.png](https://github.com/WojciechZientara/Oddaj_Rzeczy/blob/master/OddajRzeczy04.png)
 <br><br>
 ## Technology
 * Spring Boot

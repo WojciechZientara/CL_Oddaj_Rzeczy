@@ -26,23 +26,22 @@ The application consists of two separate layers: the <b>JSP frontend</b> and the
 * MySQL DB
 * Jackson
 * Lombok
-* Swagger
+* JSP & JSTL
+* JavaScript & jQuery
 <br><br>
 ## Features
 #### Not authenticated
+* Display the landing page
 * Register new account
 * Authenticate (log in)
 #### Authenticated user
-* Get unread articles
-* Get newest article, most popular articles, the article of the week
-* Post own articles, edit them and delete
-* Solve quizes regarding particular articles
-* Get list of existing forums topics
-* Look for an interesting topic via the search engine
-* Post messages/replies in existing topics, edit and delete one's messages
-* Start a new forums topic
+* Fill in and submit the donation formulaire
+* Display one's profile
+* See the history of own donations & check their status
+* Modify personal data
+* Change password
 #### Authenticated admin
-* CRUD operations on articles, quizes and their answers
-* CRUD operations on forums topics and messages
-* CRUD operations on users and their roles
+* CRUD operations on charity organisations
+* CRUD operations on users
+* CRUD operations on administrators
 

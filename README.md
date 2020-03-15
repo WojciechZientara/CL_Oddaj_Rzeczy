@@ -8,7 +8,7 @@ A simple web application allowing users to donate things they don't need anymore
 * [Features](#features)
 <br><br>
 ## Intro
-The application is meant to provide an easy solution for people who would like to .<br>
+The application is meant to provide an easy solution for people who instead of throwing away things being in good condition which they don't use anymore would like to donate them to trusted charity organisations.<br>
 The application consists of two separate layers: the <b>JSP frontend</b> and the <b>REST API</b> backend and has been prepared as the Coders Lab's 'Java Developer: Web' course graduation project.
 <br><br>
 ## Screenshots
